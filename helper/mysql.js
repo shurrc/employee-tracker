@@ -7,7 +7,7 @@ function findAll(table) {
 }
 
 function addNewDepartment(department) {
-    return db.promise().query('INSERT INTO departments SET ?', department)
+    return db.promise().query('INSERT INTO departments (department_name) VALUES (?);', department)
 }
 
 
