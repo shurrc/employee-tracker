@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 
-const promptInput = function (message, required = false) {
+const promptInput = function (message, required = false) {   //Helper function for prompt questions
     return inquirer.prompt([{
         name: 'val',
         type: 'input',

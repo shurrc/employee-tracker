@@ -1,19 +1,19 @@
 const mysql = require("mysql2");
 const db = require("../db/connection");
 
-function findAll(table) {
+function findAll(table) {  //Function that holds Select mysql2 query.
     return db.promise().query(`SELECT * FROM ${table};`)
     
 }
 
-function findAllEmployees(employees) {
+function findAllEmployees(employees) { //Function that holds mysql2 query for show all employees
     return db.promise().query(`SELECT *
     FROM ${employees}
-    LEFT JOIN roles ON employees.roles_id = roles.id
-    LEFT JOIN departments ON roles.departments_id = departments_id;`)
+    LEFT JOIN roles ON employees.roles_id = roles.id 
+    LEFT JOIN departments ON roles.departments_id = departments_id;`) //joins information from roles and departments tables with employees
 }
 
-function addNewDepartment(department) {
+function addNewDepartment(department) {   
     return db.promise().query('INSERT INTO departments (department_name) VALUES (?);', department)
 }
 

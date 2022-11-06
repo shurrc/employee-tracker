@@ -1,6 +1,6 @@
-const inquirer = require("inquirer");
+const inquirer = require("inquirer"); 
 
-const promptList = function (message, choices) {
+const promptList = function (message, choices) { //Helper function for list questions
     return inquirer.prompt([{
         name: 'val',
         type: 'list',
